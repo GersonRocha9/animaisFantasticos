@@ -1,10 +1,10 @@
-![banner](https://github.com/lucianesantcs/animais-fantasticos/blob/master/design/mockup.gif?raw=true)
+![banner](https://github.com/GersonRocha9/animais-fantasticos/blob/master/design/mockup.gif?raw=true)
 
 # Animais Fantásticos
 
 Animais Fantásticos é um site desenvolvido no curso de JavaScript ES6+ completo pela Origamid.
 <br>
-<a href="https://lucianesantcs.github.io/animais-fantasticos/">Live Preview</a>
+<a href="#">Live Preview</a>
 
 ### Previews
 
@@ -24,7 +24,7 @@ Screens das telas encontram-se na pasta `./design`
 Faça um clone deste repositório:
 
 ```sh
-  $ git clone https://github.com/lucianesantcs/animais-fantasticos.git
+  $ git clone https://github.com/GersonRocha9/animais-fantasticos.git
 ```
 
 Instale as dependências:
@@ -51,12 +51,12 @@ Acesse o projeto abrindo o arquivo **index.html** no seu navegador.
 
 ## Author
 
-**Luciane Santos**
+**Gerson Rocha**
 
-- Email: lucianesantcs@gmail.com
-- GitHub: [@lucianesantcs](https://github.com/lucianesantcs)
-- LinkedIn: [@lucianesantcs](https://linkedin.com/in/lucianesantcs)
+- Email: gersonrocha9@gmail.com
+- GitHub: [@GersonRocha9](https://github.com/GersonRocha9)
+- LinkedIn: [@gersonrocha](https://linkedin.com/in/gersonrocha)
 
 ## License
 
-Copyright © 2020 Luciane Santos / Origamid
+Copyright © 2021 Gerson Rocha / Origamid
