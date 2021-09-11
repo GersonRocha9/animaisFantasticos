@@ -1,4 +1,4 @@
-![banner](https://github.com/GersonRocha9/animais-fantasticos/design/mockup.gif?raw=true)
+![banner](https://github.com/GersonRocha9/animaisFantasticos/blob/master/design/mockup.gif)
 
 # Animais Fantásticos
 
@@ -24,7 +24,7 @@ Screens das telas encontram-se na pasta `./design`
 Faça um clone deste repositório:
 
 ```sh
-  $ git clone https://github.com/GersonRocha9/animais-fantasticos.git
+  $ git clone https://github.com/GersonRocha9/animaisFantasticos.git
 ```
 
 Instale as dependências:
