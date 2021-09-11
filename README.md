@@ -1,4 +1,4 @@
-![banner](https://github.com/GersonRocha9/animais-fantasticos/blob/master/design/mockup.gif?raw=true)
+![banner](https://github.com/GersonRocha9/animais-fantasticos/design/mockup.gif?raw=true)
 
 # Animais Fantásticos
 
