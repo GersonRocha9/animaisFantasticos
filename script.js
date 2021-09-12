@@ -67,3 +67,62 @@
 // hrefExterno.forEach((item) => {
 //   item.setAttribute("href", "https://www.linkedin.com/gersonrocha");
 // });
+
+// const medidaDoElemento = document.querySelector(".animais-lista");
+// console.log(medidaDoElemento.clientHeight); // Pega a dimensão do elemento selecionado (serve pra height e width também)
+
+// console.log(medidaDoElemento.scrollHeight); // Pega a dimensão do Scroll inteiro (serve pra height e width também)
+
+// const primeiraImagem = document.querySelector("img");
+// console.log(primeiraImagem.offsetTop + " pixels");
+
+// function somaImagens() {
+//   const imgs = document.querySelectorAll("img");
+//   let larguraTotal = 0;
+//   imgs.forEach((item) => {
+//     larguraTotal += item.offsetWidth;
+//   });
+//   console.log(larguraTotal);
+// }
+
+// window.onload = function () {
+//   somaImagens();
+// };
+
+// const todosLinks = document.querySelectorAll("a");
+// todosLinks.forEach((link) => {
+//   const linkWidth = link.offsetWidth;
+//   const linkHeight = link.offsetHeight;
+
+//   if (linkWidth >= 48 && linkHeight >= 48) {
+//     console.log(link, "Possui acessibilidade");
+//   } else {
+//     console.log(link, "Não possui boa acessibilidade");
+//   }
+// });
+
+// var browserWidth = window.matchMedia("(max-width: 720px)").matches;
+
+// if (browserWidth) {
+//   const menu = document.querySelector(".menu");
+//   menu.classList.add("menu-mobile");
+// }
+
+// const img = document.querySelector("img");
+
+// // Isolar a função é uma boa prática
+// function eventoClique() {
+//   console.log("Clicou");
+// }
+
+// // Ai pode chamar a função
+// img.addEventListener("click", eventoClique);
+
+const linkExterno = document.querySelector('a[href^="http"]');
+
+function handleLinkExterno(event) {
+  event.preventDefault();
+  console.log(event);
+}
+
+linkExterno.addEventListener("click", handleLinkExterno);
