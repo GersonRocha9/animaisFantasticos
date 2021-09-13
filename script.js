@@ -118,11 +118,51 @@
 // // Ai pode chamar a função
 // img.addEventListener("click", eventoClique);
 
-const linkExterno = document.querySelector('a[href^="http"]');
+// const linkExterno = document.querySelector('a[href^="http"]');
 
-function handleLinkExterno(event) {
-  event.preventDefault();
-  console.log(event);
-}
+// function handleLinkExterno(event) {
+//   event.preventDefault();
+//   console.log(event);
+// }
 
-linkExterno.addEventListener("click", handleLinkExterno);
+// linkExterno.addEventListener("click", handleLinkExterno);
+
+// // Mapeando imagens ao clicar sobre elas.
+// const imgs = document.querySelectorAll("img");
+
+// function handleImg(event) {
+//   console.log(event.currentTarger.getAttribute("src"));
+// }
+
+// imgs.forEach((img) => {
+//   img.addEventListener("click", handleImg);
+// });
+
+// Adicionado uma classe apenas a um link interno ao ser clicado e tirando essa classe dos demais itens
+// const linksInternos = document.querySelectorAll('a[href^="#"]');
+
+// function adicionarAtivo(event) {
+//   event.preventDefault();
+//   linksInternos.forEach((link) => {
+//     link.classList.remove("ativo");
+//   });
+//   event.currentTarget.classList.toggle("ativo");
+// }
+
+// linksInternos.forEach((item) => {
+//   item.addEventListener("click", adicionarAtivo);
+// });
+
+// const todosElementos = document.querySelectorAll("body *");
+
+// function handleElemento(event) {
+//   event.currentTarget.remove();
+// }
+
+// todosElementos.forEach((elemento) => {
+//   elemento.addEventListener("click", handleElemento);
+// });
+
+// const menu = document.querySelector(".menu");
+
+// menu.innerHTML = "<p>Olá</p>";
