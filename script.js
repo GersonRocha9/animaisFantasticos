@@ -1,168 +1,98 @@
-// // const imagens = document.querySelectorAll("img");
-// // console.log(imagens);
+// Navegação por Tab
+function initTabNav() {
+  const tabMenu = document.querySelectorAll(".js-tabmenu li");
+  const tabContent = document.querySelectorAll(".js-tabcontent section");
 
-// // const palavraImagem = document.querySelectorAll('img[src ^= "img/imagem"]');
-// // console.log(palavraImagem);
+  // if else pra executar o código apenas se retornar valor nas variáveis tabMenu e tabContent
+  if (tabMenu.length && tabContent.length) {
+    tabContent[0].classList.add("ativo");
 
-// // const linksInternos = document.querySelectorAll('[href^="#"]');
-// // console.log(linksInternos);
+    // função para adicionar classe ativo no elemento
+    function activeTab(index) {
+      tabContent.forEach((section) => {
+        section.classList.remove("ativo");
+      });
+      tabContent[index].classList.add("ativo");
+    }
 
-// // const subtitulo = document.querySelector("h2");
-// // console.log(subtitulo);
+    // Loop para cada item da li com os argumentos itemMenu e index (index de cada imagem ao ser clicada). Evento de clique para executar a função anônima e dentro dela executar a função activeTab passando o index da imagem clicada e adicionando a classe ativo sobre o tabContent referente ao mesmo index
 
-// // const ultimoParagrafo = document.querySelectorAll("p");
-// // console.log(ultimoParagrafo[ultimoParagrafo.length - 1]);
+    // Resumindo: clicou na imagem com o index 0 (Raposa), adiciona a classe ativo sobre o content que tem o index 0 (Raposa)
+    // Clicou em outra imagem com index 3, por exemplo, remove a classe de Raposa e adiciona no index 3
+    tabMenu.forEach((itemMenu, index) => {
+      itemMenu.addEventListener("click", () => {
+        activeTab(index);
+      });
+    });
+  } else {
+    console.log("Error 404");
+  }
+}
 
-// // const imagens = document.querySelectorAll("img");
-// // imagens.forEach((item) => console.log(item));
+// Accordion List:
+function initAccordion() {
+  const accordionList = document.querySelectorAll(".js-accordion dt");
+  const activeClass = "ativo";
+  if (accordionList.length) {
+    accordionList[0].classList.add(activeClass);
+    accordionList[0].nextElementSibling.classList.add(activeClass);
 
-// const paragrafos = document.querySelectorAll("p");
+    function activeAccordion() {
+      this.classList.toggle(activeClass);
+      this.nextElementSibling.classList.toggle(activeClass);
+    }
 
-// console.log(paragrafos);
+    accordionList.forEach((item) => {
+      item.addEventListener("click", activeAccordion);
+    });
+  }
+}
 
-// paragrafos.forEach((item) => console.log(item.innerText));
+// Scroll Suave Link Interno
+function initScrollSuave() {
+  function scrollToSection(event) {
+    event.preventDefault();
+    // Pegando apenas o # href
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
 
-// // -------------------------
+    // Scroll Suave para o Link Interno
+    const topo = section.offsetTop;
+    window.scrollTo({
+      top: topo,
+      behavior: "smooth",
+    });
+  }
 
-// const imgs = document.querySelectorAll("img");
+  const linksInternos = document.querySelectorAll(".js-menu a[href^='#']");
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
 
-// imgs.forEach((item, index) => {
-//   console.log(item, index);
-// });
+// Animação ao Scroll
+function initAnimacaoScroll() {
+  const sections = document.querySelectorAll(".js-scroll");
+  if (sections.length) {
+    const windowMetade = window.innerHeight * 0.6;
 
-// let i = 0;
-// imgs.forEach(() => {
-//   console.log(i++);
-// });
+    function animaScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top - windowMetade;
+        const isSectionVisible = sectionTop - windowMetade < 0;
+        if (isSectionVisible) {
+          section.classList.add("ativo");
+        } else {
+          section.classList.remove("ativo");
+        }
+      });
+    }
+    animaScroll();
+    window.addEventListener("scroll", animaScroll);
+  }
+}
 
-// imgs.forEach(() => i++);
-
-// const menu = document.querySelector(".menu");
-
-// Lista todas as classes em formato de String
-// console.log(menu.className);
-
-// menu.classList.add("ativo");
-// add = adicionar
-// remove = remove
-// toggle = adiciona (se não tiver) ou remove (se tiver)
-
-// const menuAtivo = document.querySelectorAll(".menu a");
-// menuAtivo.forEach((item) => item.classList.add("ativo"));
-
-// menuAtivo.forEach((item) => item.classList.remove("ativo"));
-
-// menuAtivo[0].classList.add("ativo");
-
-// const imgs = document.querySelectorAll("img");
-// console.log(imgs);
-
-// imgs.forEach((img) => {
-//   const possuiAlt = img.hasAttribute("alt");
-//   console.log(possuiAlt);
-// });
-
-// const hrefExterno = document.querySelectorAll('.menu [href^="https"]');
-
-// hrefExterno.forEach((item) => {
-//   item.setAttribute("href", "https://www.linkedin.com/gersonrocha");
-// });
-
-// const medidaDoElemento = document.querySelector(".animais-lista");
-// console.log(medidaDoElemento.clientHeight); // Pega a dimensão do elemento selecionado (serve pra height e width também)
-
-// console.log(medidaDoElemento.scrollHeight); // Pega a dimensão do Scroll inteiro (serve pra height e width também)
-
-// const primeiraImagem = document.querySelector("img");
-// console.log(primeiraImagem.offsetTop + " pixels");
-
-// function somaImagens() {
-//   const imgs = document.querySelectorAll("img");
-//   let larguraTotal = 0;
-//   imgs.forEach((item) => {
-//     larguraTotal += item.offsetWidth;
-//   });
-//   console.log(larguraTotal);
-// }
-
-// window.onload = function () {
-//   somaImagens();
-// };
-
-// const todosLinks = document.querySelectorAll("a");
-// todosLinks.forEach((link) => {
-//   const linkWidth = link.offsetWidth;
-//   const linkHeight = link.offsetHeight;
-
-//   if (linkWidth >= 48 && linkHeight >= 48) {
-//     console.log(link, "Possui acessibilidade");
-//   } else {
-//     console.log(link, "Não possui boa acessibilidade");
-//   }
-// });
-
-// var browserWidth = window.matchMedia("(max-width: 720px)").matches;
-
-// if (browserWidth) {
-//   const menu = document.querySelector(".menu");
-//   menu.classList.add("menu-mobile");
-// }
-
-// const img = document.querySelector("img");
-
-// // Isolar a função é uma boa prática
-// function eventoClique() {
-//   console.log("Clicou");
-// }
-
-// // Ai pode chamar a função
-// img.addEventListener("click", eventoClique);
-
-// const linkExterno = document.querySelector('a[href^="http"]');
-
-// function handleLinkExterno(event) {
-//   event.preventDefault();
-//   console.log(event);
-// }
-
-// linkExterno.addEventListener("click", handleLinkExterno);
-
-// // Mapeando imagens ao clicar sobre elas.
-// const imgs = document.querySelectorAll("img");
-
-// function handleImg(event) {
-//   console.log(event.currentTarger.getAttribute("src"));
-// }
-
-// imgs.forEach((img) => {
-//   img.addEventListener("click", handleImg);
-// });
-
-// Adicionado uma classe apenas a um link interno ao ser clicado e tirando essa classe dos demais itens
-// const linksInternos = document.querySelectorAll('a[href^="#"]');
-
-// function adicionarAtivo(event) {
-//   event.preventDefault();
-//   linksInternos.forEach((link) => {
-//     link.classList.remove("ativo");
-//   });
-//   event.currentTarget.classList.toggle("ativo");
-// }
-
-// linksInternos.forEach((item) => {
-//   item.addEventListener("click", adicionarAtivo);
-// });
-
-// const todosElementos = document.querySelectorAll("body *");
-
-// function handleElemento(event) {
-//   event.currentTarget.remove();
-// }
-
-// todosElementos.forEach((elemento) => {
-//   elemento.addEventListener("click", handleElemento);
-// });
-
-// const menu = document.querySelector(".menu");
-
-// menu.innerHTML = "<p>Olá</p>";
+initAnimacaoScroll();
+initScrollSuave();
+initTabNav();
+initAccordion();
