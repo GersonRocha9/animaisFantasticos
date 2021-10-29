@@ -27,26 +27,6 @@ Faça um clone deste repositório:
   $ git clone https://github.com/GersonRocha9/animaisFantasticos.git
 ```
 
-Instale as dependências:
-
-```sh
-  # com npm
-  $ npm install
-
-  # com yarn
-  $ yarn install
-```
-
-Inicie o projeto com o comando:
-
-```sh
-  # com npm
-  $ npm run dev
-
-  # com yarn
-  $ yarn run dev
-```
-
 Acesse o projeto abrindo o arquivo **index.html** no seu navegador.
 
 ## Author
